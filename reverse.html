@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" lang="zh-cmn-hans">
+<title>Vue 方法监听器methods</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<p>{{message}}</p>
+    <button v-on:click= 'reverseMessage'>翻转字符串</button>
+   <input v-model="message">
+</div>
+	
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Runoob!'
+  },
+  methods: {
+  	reverseMessage:function(){
+		this.message = this.message.split('').reverse().join('')
+	}
+  }
+})
+</script>
+</body>
+</html>
