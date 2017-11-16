@@ -14,11 +14,12 @@
 
     <!-- Custom styles for this template -->
     <link href="./css/offcanvas.css" rel="stylesheet">
+
   </head>
 
   <body>
 
-    <nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -49,41 +50,33 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="content">
 
       <div class="row row-offcanvas row-offcanvas-right">
 
-        <div class="col-12">
-          <p class="float-right" hidden>
+        <div class="col-12 col-md-9">
+          <p class="float-right hidden-md-up">
             <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
           </p>
           <div class="jumbotron">
             <h1>Hello, world!</h1>
             <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
           </div>
-          <div class="row" id="content">
-            <div class="col-12 col-md-6" v-for="con in cons">
+          <div class="row" >
+            <div class="col-12 col-lg-12" v-for="con in cons" :id='con.id'>
               <h2>{{con.title}}</h2>
               <p>{{con.content}}</p>
-              <p><a class="btn btn-secondary" :href="con.url" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-secondary" :href="con.url" role="button" >View details &raquo;</a></p>
             </div><!--/span-->
 
             
           </div><!--/row-->
         </div><!--/span-->
-
-        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar" hidden>
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Lssink</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Linsssk</a>
-            <a href="#" class="list-group-item">Lisssnk</a>
-            <a href="#" class="list-group-item">Lssssink</a>
+		
+        <div class="col-6 col-md-3 sidebar-offcanvas" data-spy="affix" data-offset-top="125"  id="sidebar">
+          <div class="list-group" id='myNav' >
+            <a :href="'#'+con.id" class="list-group-item " v-for='con in cons'>{{con.title}}</a>
+            
           </div>
         </div><!--/span-->
       </div><!--/row-->
@@ -101,13 +94,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./js/mybootstrap.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
     <script src="./js/offcanvas.js"></script>
     <!-- vue.js -->
-    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script src="./js/vue.js"></script>
     <script src="./js/myvue.js"></script>
   </body>
 </html>
