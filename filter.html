@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="app">
-  {{ message |capitalize('Test',5+5)}}
+  {{ message |capitalize('test233',5+5)}}
 </div>
 	
 <script>
@@ -17,10 +17,10 @@ new Vue({
 	message: 'runoob'
   },
   filters: {
-    capitalize: function (value,string,arg2) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1) + string + arg2
+      capitalize: function (value,string,arg2) {
+      if (!value) return '';
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1) + string + arg2;
     }
   }
 })
