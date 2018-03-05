@@ -76,7 +76,7 @@
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" >
           <div class="list-group" id='myNav'>
-            <a :href="'#'+con.id" class="list-group-item" v-for='con in cons'>{{con.title}}</a>
+            <a :href="'#'+con.id" class="list-group-item" data-toggle="offcanvas" v-for='con in cons'>{{con.title}}</a>
           </div>
         </div><!--/.sidebar-offcanvas-->
       </div><!--/row-->
