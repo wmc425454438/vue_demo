@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>V-for</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+
+</head>
+<body>
+<div id="app0">
+    <ol>
+        <li v-for="site in sites">
+            {{ site.name }}
+        </li>
+    </ol>
+    <ul>
+        <template v-for="site in sites">
+            <li>{{ site.name }}</li>
+            <li>--------------</li>
+        </template>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app0',
+        data: {
+            sites: [
+                { name: 'Runoob' },
+                { name: 'Google' },
+                { name: 'Taobao' }
+            ]
+        }
+    })
+
+
+</script>
+
+<div id="app1">
+    <ul>
+        <li v-for="value in object">
+            {{ value }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="(value, key) in object">
+            {{ key }} : {{ value }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="(value, key, index) in object">
+            {{ index }}. {{ key }} : {{ value }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="n in 10">
+            {{ n }}
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app1',
+        data: {
+            object: {
+                name: '菜鸟教程',
+                url: 'http://www.runoob.com',
+                slogan: '学的不仅是技术，更是梦想！'
+            }
+        }
+    })
+</script>
+</body>
+</html>
