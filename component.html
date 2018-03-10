@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <runoob></runoob>
+    <win />
+</div>
+
+<runoob></runoob>
+<win></win>
+
+<script>
+
+
+
+    var Child1 = {
+        template: '<h1 style="color: red">局部注册组件</h1>'
+    }
+
+    Vue.component('runoob',{
+        template: '<h1>全局注册组件</h1>'
+    })
+    // 创建根实例
+    new Vue({
+        el: '#app',
+        components:{
+            'win': Child1
+        }
+    })
+
+</script>
+
+</body>
+</html>
